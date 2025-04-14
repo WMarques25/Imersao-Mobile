@@ -1,6 +1,7 @@
 {
 	"nodes":[
-		{"id":"ce8ca71534b44fa5","x":-160,"y":-260,"width":114,"height":66,"color":"6","type":"text","text":"Flutter"}
+		{"id":"ce8ca71534b44fa5","type":"text","text":"Flutter","x":-840,"y":-620,"width":114,"height":66,"color":"6"},
+		{"id":"d6baa4e466d71b81","x":-840,"y":-540,"width":250,"height":132,"type":"text","text":"Palavras Chave:\n- Alura"}
 	],
 	"edges":[]
 }
