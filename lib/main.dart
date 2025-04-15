@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/data/restaurant_data.dart';
+import 'package:myapp/model/restaurant.dart';
 import 'package:myapp/ui/_core/app_theme.dart';
 import 'package:myapp/ui/splash/splash_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-    runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  RestaurantData restData = RestaurantData();
+  await restData.getRestaurants();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context){
+        return restData;
+      })
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,3 +31,4 @@ class MyApp extends StatelessWidget {
         );
     }
 }
+

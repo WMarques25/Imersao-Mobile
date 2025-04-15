@@ -1,8 +1,16 @@
-
 ## Widget
 - Todo elemento visual: Telas, componentes..
 
 ### Stateless Widget - não muda de estado, sem mudança do componente/tela
+
+### Mudar nome do App
+`android/app/src/main/AndroidManifest.xml`
+```dart
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="Teste"
+		...
+```
 
 ### Iniciando Projeto -> main() dart
 `/lib/main.dart`
