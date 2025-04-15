@@ -29,7 +29,12 @@ class HomeScreen extends StatelessWidget {
             children: [
               Center(child: Image.asset('assets/logo.png', width: 147)),
               Text("Boas-vindas!"),
-              TextFormField(),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  
+                ),
+              ),
               Text("Escolha por Categoria"),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
