@@ -18,8 +18,8 @@ class SplashScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 32.0,
                 children: [
-                  SizedBox(height: 200.0),
-                  Image.asset('assets/logo.png', width: 192),
+                  SizedBox(height: 150.0),
+                  Image.asset('assets/logo.png', width: 280),
                   SizedBox(height: 14.0),
                   Column(
                     children: [
