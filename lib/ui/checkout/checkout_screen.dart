@@ -12,7 +12,14 @@ class CheckoutScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Sacola"),
-        actions: [TextButton(onPressed: () {bagProvider.clearBag();}, child: Text("Limpar"))],
+        actions: [
+          TextButton(
+            onPressed: () {
+              bagProvider.clearBag();
+            },
+            child: Text("Limpar"),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -20,7 +27,11 @@ class CheckoutScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text("Pedidos", textAlign: TextAlign.center, style: TextStyle(fontSize: 18),),
+              Text(
+                "Pedidos",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
               Column(
                 children: List.generate(
                   bagProvider.getMapByAmount().keys.length,
@@ -39,19 +50,27 @@ class CheckoutScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            onPressed: () {bagProvider.removeDish(dish);},
-                            icon: Icon(Icons.remove),
+                            onPressed: () {
+                              bagProvider.removeDish(dish);
+                            },
+                            icon: Icon(Icons.remove_circle_outline),
                           ),
                           Text(
                             bagProvider.getMapByAmount()[dish].toString(),
                             style: TextStyle(fontSize: 18),
                           ),
-                          IconButton(onPressed: () {bagProvider.addAllDishes([dish]);}, icon: Icon(Icons.add)),
+                          IconButton(
+                            onPressed: () {
+                              bagProvider.addAllDishes([dish]);
+                            },
+                            icon: Icon(Icons.add_circle_outline),
+                          ),
                         ],
                       ),
                     );
                   },
                 ),
+                // TODO: Add Pagamento, Endereço, Confirmação
               ),
             ],
           ),

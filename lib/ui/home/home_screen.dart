@@ -18,46 +18,55 @@ class HomeScreen extends StatelessWidget {
       appBar: getAppBar(context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: 
-          SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 32,
             children: [
-              Center(heightFactor: 1.5,
-                child: Image.asset('assets/logo.png', width: 147)),
-              Text("Boas-vindas!"),
+              Center(
+                heightFactor: 1.5,
+                child: Image.asset('assets/logo.png', width: 187),
+              ),
+              Text("Boas-vindas!", style: TextStyle(fontSize: 24)),
               TextFormField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                  
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  prefixIcon: Icon(Icons.search_sharp),
+                  label: Text(
+                    "O que você quer comer?",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
               ),
-              Text("Escolha por Categoria"),
+              Text("Escolha por Categoria", style: TextStyle(fontSize: 18)),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   spacing: 10.0,
-                  children: List.generate(
-                    CategoriesData.categories.length, 
-                    (index){
-                      return CategoryWidget(
-                        category: CategoriesData.categories[index]);
-                    }
-                  ),
+                  children: List.generate(CategoriesData.categories.length, (
+                    index,
+                  ) {
+                    return CategoryWidget(
+                      category: CategoriesData.categories[index],
+                    );
+                  }),
                 ),
               ),
               Image.asset("assets/banners/banner_promo.png"),
               Text("Bem Avaliados"),
               Column(
                 spacing: 16,
-                children: List.generate(restData.listRestaurant.length, 
-                (index) {
+                children: List.generate(restData.listRestaurant.length, (
+                  index,
+                ) {
                   Restaurant rest = restData.listRestaurant[index];
                   return RestaurantWidget(restaurant: rest);
                 }),
               ),
-              SizedBox(height: 64,),
+              SizedBox(height: 64),
             ],
           ),
         ),
