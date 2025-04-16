@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "26eeef16c80435fe",
+        "id": "b57f5bb5a9815894",
         "type": "tabs",
         "children": [
           {
-            "id": "47e51c523a0e8973",
+            "id": "4ecd2f24d1883d05",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Sem título.canvas",
-                "viewState": {
-                  "x": -103,
-                  "y": -227,
-                  "zoom": 0
-                }
+                "file": "Aula 2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Sem título"
+              "icon": "lucide-file",
+              "title": "Aula 2"
             }
           }
         ]
@@ -56,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "CategoryWidget",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 268.5
+    "width": 200
   },
   "right": {
     "id": "0f1f871bfc233742",
@@ -97,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sem título.canvas",
+                "file": "Aula 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para Sem título"
+              "title": "Links inversos para Aula 2"
             }
           },
           {
@@ -171,8 +168,13 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "47e51c523a0e8973",
+  "active": "4ecd2f24d1883d05",
   "lastOpenFiles": [
+    "\"Aula.md",
+    "Aula 2.md",
+    "Aula.md",
+    "Aula_2.md",
+    "CategoryWidget.md",
     "Aula 1.md",
     "Sem título.canvas",
     "Bem-vindo.md"
