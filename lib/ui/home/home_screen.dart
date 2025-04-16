@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/data/categories_data.dart';
 import 'package:myapp/data/restaurant_data.dart';
 import 'package:myapp/model/restaurant.dart';
+import 'package:myapp/ui/_core/widgets/app_bar.dart';
 import 'package:myapp/ui/home/widgets/category_widget.dart';
 import 'package:myapp/ui/home/widgets/restaurant_widget.dart';
 import 'package:provider/provider.dart';
@@ -14,11 +15,7 @@ class HomeScreen extends StatelessWidget {
     RestaurantData restData = Provider.of<RestaurantData>(context);
     return Scaffold(
       drawer: Drawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart)),
-        ],
-      ),
+      appBar: getAppBar(context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: 
@@ -27,7 +24,8 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 32,
             children: [
-              Center(child: Image.asset('assets/logo.png', width: 147)),
+              Center(heightFactor: 1.5,
+                child: Image.asset('assets/logo.png', width: 147)),
               Text("Boas-vindas!"),
               TextFormField(
                 decoration: InputDecoration(
