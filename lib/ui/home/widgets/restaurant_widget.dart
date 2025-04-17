@@ -25,6 +25,7 @@ class RestaurantWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.bgCards.withAlpha(80),
           borderRadius: BorderRadius.circular(90),
+          border: Border.all(color: AppColors.lightBgColor, width: 1),
           boxShadow: [
             BoxShadow(
               color: AppColors.lightBgColor.withAlpha(10),

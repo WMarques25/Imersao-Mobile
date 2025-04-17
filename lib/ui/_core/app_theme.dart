@@ -10,7 +10,7 @@ abstract class AppTheme {
           if (states.contains(WidgetState.disabled)) {
             return Colors.grey;
           } else if (states.contains(WidgetState.pressed)) {
-            return const Color.fromARGB(171, 255, 164, 89);
+            return AppColors.pressedColor;
           }
           return AppColors.mainColor;
         }),

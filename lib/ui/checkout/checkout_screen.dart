@@ -32,7 +32,7 @@ class CheckoutScreen extends StatelessWidget {
             child: Text(
               "Limpar",
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: FontWeight.w400,
                 color: AppColors.mainColor,
               ),
@@ -44,6 +44,7 @@ class CheckoutScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
+            spacing: 16,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(

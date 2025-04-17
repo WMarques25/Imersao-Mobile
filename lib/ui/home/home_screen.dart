@@ -6,6 +6,7 @@ import 'package:myapp/ui/_core/app_colors.dart';
 import 'package:myapp/ui/_core/widgets/app_bar.dart';
 import 'package:myapp/ui/home/widgets/category_widget.dart';
 import 'package:myapp/ui/home/widgets/restaurant_widget.dart';
+import 'package:myapp/ui/home/widgets/search_field.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,19 +37,7 @@ class HomeScreen extends StatelessWidget {
                   color: AppColors.textDestaque,
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  prefixIcon: Icon(Icons.search_sharp),
-                  label: Text(
-                    "O que você quer comer?",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                ),
-              ),
+              SearchField(),
               Text(
                 "Escolha por Categoria",
                 style: TextStyle(
