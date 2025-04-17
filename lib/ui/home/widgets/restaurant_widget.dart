@@ -10,6 +10,7 @@ class RestaurantWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(90),
       onTap: () {
         Navigator.push(
           context,
@@ -22,11 +23,11 @@ class RestaurantWidget extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.lightBgColor,
+          color: AppColors.bgCards.withAlpha(80),
           borderRadius: BorderRadius.circular(90),
           boxShadow: [
             BoxShadow(
-              color: AppColors.lightBgColor.withAlpha(30),
+              color: AppColors.lightBgColor.withAlpha(10),
               blurRadius: 8,
               offset: Offset(0, 4),
             ),
@@ -35,13 +36,17 @@ class RestaurantWidget extends StatelessWidget {
         child: Row(
           spacing: 12.0,
           children: [
-            Image.asset('assets/${restaurant.imagePath}', width: 72),
+            Image.asset('assets/${restaurant.imagePath}', width: 96),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   restaurant.name,
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textDestaque,
+                  ),
                 ),
                 Row(
                   children: List.generate(restaurant.stars.toInt(), (index) {

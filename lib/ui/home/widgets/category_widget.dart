@@ -23,7 +23,7 @@ class CategoryWidget extends StatelessWidget {
             height: 48,),
           Text(
             category,
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: AppColors.textDestaque),
           )
         ],
       ),

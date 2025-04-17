@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/data/categories_data.dart';
 import 'package:myapp/data/restaurant_data.dart';
 import 'package:myapp/model/restaurant.dart';
+import 'package:myapp/ui/_core/app_colors.dart';
 import 'package:myapp/ui/_core/widgets/app_bar.dart';
 import 'package:myapp/ui/home/widgets/category_widget.dart';
 import 'package:myapp/ui/home/widgets/restaurant_widget.dart';
@@ -27,7 +28,14 @@ class HomeScreen extends StatelessWidget {
                 heightFactor: 1.5,
                 child: Image.asset('assets/logo.png', width: 187),
               ),
-              Text("Boas-vindas!", style: TextStyle(fontSize: 24)),
+              Text(
+                "Boas-vindas!",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textDestaque,
+                ),
+              ),
               TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -41,7 +49,14 @@ class HomeScreen extends StatelessWidget {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
               ),
-              Text("Escolha por Categoria", style: TextStyle(fontSize: 18)),
+              Text(
+                "Escolha por Categoria",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.textDestaque,
+                ),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -56,7 +71,14 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Image.asset("assets/banners/banner_promo.png"),
-              Text("Bem Avaliados"),
+              Text(
+                "Bem Avaliados",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDestaque,
+                ),
+              ),
               Column(
                 spacing: 16,
                 children: List.generate(restData.listRestaurant.length, (
