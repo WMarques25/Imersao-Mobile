@@ -10,7 +10,7 @@ ElevatedButton(
 	);
 },)
 ```
-
+---
 ## HomeScreen
 `lib/ui/home/home_screen.dart`
 - Classe criada para a tela principal.
@@ -36,7 +36,7 @@ SingleChildScrollView( // Container com Rolagem
 	),
 ),
 ```
-
+---
 ## CategoriesData
 `lib/data/categories_data.dart`
 ```dart
@@ -46,6 +46,7 @@ abstract class CategoriesData {
 	];
 }
 ```
+---
 ## CategoryWidget
 `lib/ui/home/widgets/category_widget.dart`
 ```dart
@@ -65,7 +66,7 @@ class CategoryWidget extends StatelessWidget {
 
 		Image.asset("assets/categories/${category.toLowerCase()}.png", // $ permite usar variavel na String, ${} abre um bloco de codigo para montar a String
 ```
-
+---
 ## Restaurant
 `lib/model/restaurant.dart`
 Classe Model representando um Restaurante.
@@ -106,7 +107,7 @@ class Restaurant {
 	}
 }
 ```
-
+---
 ## RestaurantData
 `lib/data/restaurant_data.dart`
 ```dart
@@ -130,12 +131,12 @@ class RestaurantData extends ChangeNotifier {
 	}
 }
 ```
-
+---
 ## RestaurantWidget
 `lib/ui/home/widgets/restaurant_widget.dart`
 #### Mesmo de [CategoryWidget](#CategoryWidget)
 
-
+---
 ## Mudanças no Main
 `lib/main.dart`
 ```dart
@@ -154,3 +155,4 @@ void main() async{
 	));
 }
 ```
+---

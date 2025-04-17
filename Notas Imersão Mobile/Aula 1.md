@@ -2,7 +2,7 @@
 - Todo elemento visual: Telas, componentes..
 
 ### Stateless Widget - não muda de estado, sem mudança do componente/tela
-
+---
 ### Mudar nome do App
 `android/app/src/main/AndroidManifest.xml`
 ```dart
@@ -11,7 +11,7 @@
         android:label="Teste"
 		...
 ```
-
+---
 ### Iniciando Projeto -> main() dart
 `/lib/main.dart`
 ```dart
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget { // Stateless -> Widgets estáticos
 	}
 }
 ```
-
+---
 ### SplashScreen -> home de MyApp()
 `lib/ui/splash/splash_screen.dart`
 ```dart
@@ -63,7 +63,7 @@ class SplashScreen extends StatelessWidget {
 	}
 }
 ```
-
+---
 ### AppColors -> Paleta de Cores do App
 `lib/ui/_core/app_colors.dart`
 ```dart
@@ -74,7 +74,7 @@ abstract class AppColors { // Classe Abstrata
 	static const Color mainColor = Color(0xFFffa559);
 }
 ```
-
+---
 ### AppTheme -> Definição do tema dos Widget
 `lib/ui/_core/app_theme.dart`
 ```dart
@@ -99,3 +99,4 @@ abstract class AppTheme {
 	);
 }
 ```
+---

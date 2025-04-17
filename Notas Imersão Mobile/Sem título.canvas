@@ -1,7 +1,7 @@
 {
 	"nodes":[
-		{"id":"ce8ca71534b44fa5","type":"text","text":"Flutter","x":-840,"y":-620,"width":114,"height":66,"color":"6"},
-		{"id":"d6baa4e466d71b81","type":"text","text":"Palavras Chave:\n- Alura\n- Widgets\n- Guia de Mergulho","x":-840,"y":-540,"width":250,"height":132}
+		{"id":"d6baa4e466d71b81","type":"text","text":"Palavras Chave:\n- Alura\n- Widgets\n- Guia de Mergulho","x":-840,"y":-540,"width":250,"height":132},
+		{"id":"ce8ca71534b44fa5","type":"text","text":"Flutter","x":-840,"y":-590,"width":125,"height":50,"color":"6"}
 	],
 	"edges":[]
 }
