@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/model/dish.dart';
+import 'package:myapp/ui/_core/app_colors.dart';
 import 'package:myapp/ui/_core/bag_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -11,13 +12,31 @@ class CheckoutScreen extends StatelessWidget {
     BagProvider bagProvider = Provider.of<BagProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sacola"),
+        centerTitle: true,
+        actionsPadding: EdgeInsets.symmetric(horizontal: 10),
+        title: Text(
+          "Sacola",
+          style: TextStyle(fontSize: 22, color: AppColors.textCards),
+        ),
         actions: [
           TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: AppColors.bgColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18),
+              ),
+            ),
             onPressed: () {
               bagProvider.clearBag();
             },
-            child: Text("Limpar"),
+            child: Text(
+              "Limpar",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.mainColor,
+              ),
+            ),
           ),
         ],
       ),
@@ -28,9 +47,13 @@ class CheckoutScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Pedidos",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                "Pedido",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDestaque,
+                ),
               ),
               Column(
                 children: List.generate(
@@ -39,13 +62,38 @@ class CheckoutScreen extends StatelessWidget {
                     Dish dish =
                         bagProvider.getMapByAmount().keys.toList()[index];
 
-                    return ListTile(
+                    return ListTile( // TODO: mudar para Widget proprio
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 0,
+                        vertical: 0,
+                      ),
+                      minVerticalPadding: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      minTileHeight: 80,
+                      titleTextStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textDestaque,
+                      ),
                       leading: Image.asset(
                         "assets/dishes/default.png",
-                        height: 48,
+                        height: 80,
+                        width: 80,
+                        scale: 3,
+                        fit: BoxFit.none,
+                        alignment: Alignment.topLeft,
                       ),
                       title: Text(dish.name),
-                      subtitle: Text("R\$: ${dish.price.toStringAsFixed(2)}"),
+                      tileColor: AppColors.bgCards,
+                      subtitle: Text(
+                        "R\$ ${dish.price.toStringAsFixed(2)}",
+                        style: TextStyle(
+                          color: AppColors.textCards,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -53,7 +101,7 @@ class CheckoutScreen extends StatelessWidget {
                             onPressed: () {
                               bagProvider.removeDish(dish);
                             },
-                            icon: Icon(Icons.remove_circle_outline),
+                            icon: Icon(Icons.remove_circle_outline, color: AppColors.mainColor,),
                           ),
                           Text(
                             bagProvider.getMapByAmount()[dish].toString(),
@@ -63,7 +111,7 @@ class CheckoutScreen extends StatelessWidget {
                             onPressed: () {
                               bagProvider.addAllDishes([dish]);
                             },
-                            icon: Icon(Icons.add_circle_outline),
+                            icon: Icon(Icons.add_circle_outline, color: AppColors.mainColor),
                           ),
                         ],
                       ),

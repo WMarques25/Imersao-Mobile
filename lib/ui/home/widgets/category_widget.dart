@@ -8,7 +8,8 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100, height: 100,
+      width: 100,
+      height: 100,
       decoration: BoxDecoration(
         color: AppColors.lightBgColor,
         borderRadius: BorderRadius.circular(12),
@@ -19,12 +20,18 @@ class CategoryWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: 8.0,
         children: [
-          Image.asset("assets/categories/${category.toLowerCase()}.png", 
-            height: 48,),
+          Image.asset(
+            "assets/categories/${category.toLowerCase()}.png",
+            height: 48,
+          ),
           Text(
             category,
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: AppColors.textDestaque),
-          )
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textDestaque,
+            ),
+          ),
         ],
       ),
     );
