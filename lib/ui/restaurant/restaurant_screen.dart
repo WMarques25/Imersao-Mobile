@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/model/dish.dart';
 import 'package:myapp/model/restaurant.dart';
 import 'package:myapp/ui/_core/app_colors.dart';
-import 'package:myapp/ui/_core/bag_provider.dart';
 import 'package:myapp/ui/_core/widgets/app_bar.dart';
 import 'package:myapp/ui/restaurant/widgets/dish_widget.dart';
-import 'package:provider/provider.dart';
 
 class RestaurantScreen extends StatelessWidget {
   final Restaurant rest;
@@ -37,7 +35,7 @@ class RestaurantScreen extends StatelessWidget {
                 children: List.generate(rest.dishes.length, (index) {
                   Dish dish = rest.dishes[index];
                           
-                  return DishWidget(dish: dish);
+                  return DishWidget(dish: dish, restaurant: rest);
                 }),
               ),
             ],
