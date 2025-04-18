@@ -52,7 +52,7 @@ void main(){
     print(realizarOperacao(quadrado, 2));
 
     var fibonaci = [1, 2, 3, 5, 8, 13, 21];
-    // fibonaci.forEach((numero) => print(numero));
+    fibonaci.forEach((numero) => print(numero));
 
     const americaDoSul = [ 'Argentina', 'Brasil', 'Chile' ];
     const americaDoNorte = ['Canada', 'Estados Unidos', 'México'];
