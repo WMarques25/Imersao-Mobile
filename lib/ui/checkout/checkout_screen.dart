@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/model/dish.dart';
 import 'package:myapp/ui/_core/app_colors.dart';
 import 'package:myapp/ui/_core/bag_provider.dart';
+import 'package:myapp/ui/checkout/widgets/item_widget.dart';
 import 'package:provider/provider.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -57,66 +58,68 @@ class CheckoutScreen extends StatelessWidget {
                 ),
               ),
               Column(
+                spacing: 16,
                 children: List.generate(
                   bagProvider.getMapByAmount().keys.length,
                   (index) {
                     Dish dish =
                         bagProvider.getMapByAmount().keys.toList()[index];
 
-                    return ListTile( // TODO: mudar para Widget proprio
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 0,
-                        vertical: 0,
-                      ),
-                      minVerticalPadding: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                      minTileHeight: 80,
-                      titleTextStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textDestaque,
-                      ),
-                      leading: Image.asset(
-                        "assets/dishes/default.png",
-                        height: 80,
-                        width: 80,
-                        scale: 3,
-                        fit: BoxFit.none,
-                        alignment: Alignment.topLeft,
-                      ),
-                      title: Text(dish.name),
-                      tileColor: AppColors.bgCards,
-                      subtitle: Text(
-                        "R\$ ${dish.price.toStringAsFixed(2)}",
-                        style: TextStyle(
-                          color: AppColors.textCards,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              bagProvider.removeDish(dish);
-                            },
-                            icon: Icon(Icons.remove_circle_outline, color: AppColors.mainColor,),
-                          ),
-                          Text(
-                            bagProvider.getMapByAmount()[dish].toString(),
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              bagProvider.addAllDishes([dish]);
-                            },
-                            icon: Icon(Icons.add_circle_outline, color: AppColors.mainColor),
-                          ),
-                        ],
-                      ),
-                    );
+                      return ItemWidget(dish: dish);
+                    // return ListTile( // TODO: mudar para Widget proprio
+                    //   contentPadding: EdgeInsets.symmetric(
+                    //     horizontal: 0,
+                    //     vertical: 0,
+                    //   ),
+                    //   minVerticalPadding: 0,
+                    //   shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.all(Radius.circular(12)),
+                    //   ),
+                    //   minTileHeight: 80,
+                    //   titleTextStyle: TextStyle(
+                    //     fontSize: 14,
+                    //     fontWeight: FontWeight.w500,
+                    //     color: AppColors.textDestaque,
+                    //   ),
+                    //   leading: Image.asset(
+                    //     "assets/dishes/default.png",
+                    //     height: 80,
+                    //     width: 80,
+                    //     scale: 3,
+                    //     fit: BoxFit.none,
+                    //     alignment: Alignment.topLeft,
+                    //   ),
+                    //   title: Text(dish.name),
+                    //   tileColor: AppColors.bgCards,
+                    //   subtitle: Text(
+                    //     "R\$ ${dish.price.toStringAsFixed(2)}",
+                    //     style: TextStyle(
+                    //       color: AppColors.textCards,
+                    //       fontWeight: FontWeight.w400,
+                    //     ),
+                    //   ),
+                    //   trailing: Row(
+                    //     mainAxisSize: MainAxisSize.min,
+                    //     children: [
+                    //       IconButton(
+                    //         onPressed: () {
+                    //           bagProvider.removeDish(dish);
+                    //         },
+                    //         icon: Icon(Icons.remove_circle_outline, color: AppColors.mainColor,),
+                    //       ),
+                    //       Text(
+                    //         bagProvider.getMapByAmount()[dish].toString(),
+                    //         style: TextStyle(fontSize: 18),
+                    //       ),
+                    //       IconButton(
+                    //         onPressed: () {
+                    //           bagProvider.addAllDishes([dish]);
+                    //         },
+                    //         icon: Icon(Icons.add_circle_outline, color: AppColors.mainColor),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // );
                   },
                 ),
                 // TODO: Add Pagamento, Endereço, Confirmação
