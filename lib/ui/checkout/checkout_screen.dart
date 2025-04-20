@@ -65,64 +65,260 @@ class CheckoutScreen extends StatelessWidget {
                     Dish dish =
                         bagProvider.getMapByAmount().keys.toList()[index];
 
-                      return ItemWidget(dish: dish);
-                    // return ListTile( // TODO: mudar para Widget proprio
-                    //   contentPadding: EdgeInsets.symmetric(
-                    //     horizontal: 0,
-                    //     vertical: 0,
-                    //   ),
-                    //   minVerticalPadding: 0,
-                    //   shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.all(Radius.circular(12)),
-                    //   ),
-                    //   minTileHeight: 80,
-                    //   titleTextStyle: TextStyle(
-                    //     fontSize: 14,
-                    //     fontWeight: FontWeight.w500,
-                    //     color: AppColors.textDestaque,
-                    //   ),
-                    //   leading: Image.asset(
-                    //     "assets/dishes/default.png",
-                    //     height: 80,
-                    //     width: 80,
-                    //     scale: 3,
-                    //     fit: BoxFit.none,
-                    //     alignment: Alignment.topLeft,
-                    //   ),
-                    //   title: Text(dish.name),
-                    //   tileColor: AppColors.bgCards,
-                    //   subtitle: Text(
-                    //     "R\$ ${dish.price.toStringAsFixed(2)}",
-                    //     style: TextStyle(
-                    //       color: AppColors.textCards,
-                    //       fontWeight: FontWeight.w400,
-                    //     ),
-                    //   ),
-                    //   trailing: Row(
-                    //     mainAxisSize: MainAxisSize.min,
-                    //     children: [
-                    //       IconButton(
-                    //         onPressed: () {
-                    //           bagProvider.removeDish(dish);
-                    //         },
-                    //         icon: Icon(Icons.remove_circle_outline, color: AppColors.mainColor,),
-                    //       ),
-                    //       Text(
-                    //         bagProvider.getMapByAmount()[dish].toString(),
-                    //         style: TextStyle(fontSize: 18),
-                    //       ),
-                    //       IconButton(
-                    //         onPressed: () {
-                    //           bagProvider.addAllDishes([dish]);
-                    //         },
-                    //         icon: Icon(Icons.add_circle_outline, color: AppColors.mainColor),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // );
+                    return ItemWidget(dish: dish);
+                    // return ListTile( // TODO: mudar p
                   },
                 ),
                 // TODO: Add Pagamento, Endereço, Confirmação
+              ),
+              Text(
+                "Pagamento",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDestaque,
+                ),
+              ),
+              Container(
+                height: 90,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppColors.bgCards,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 20,
+                  ),
+                  child: Row(
+                    spacing: 16,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        'assets/others/visa.png',
+                        width: 38,
+                        height: 24,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Visa Classic",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            "****-0976",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.mainColor,
+                            width: 3,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.chevron_right_outlined,
+                          color: AppColors.mainColor,
+                          size: 32,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Text(
+                "Entregar no endereço:",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDestaque,
+                ),
+              ),
+              Container(
+                height: 90,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppColors.bgCards,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 20,
+                  ),
+                  child: Row(
+                    spacing: 16,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                        child: Icon(Icons.location_on, size: 34),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Rua das Acácias, 28",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            "Casa 10",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.mainColor,
+                            width: 3,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.chevron_right_outlined,
+                          color: AppColors.mainColor,
+                          size: 32,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Text(
+                "Confirmar",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDestaque,
+                ),
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppColors.bgCards,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 20,
+                  ),
+                  child: Column(
+                    spacing: 8,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Pedido:", style: TextStyle(fontSize: 18)),
+                          Text(
+                            "R\$ ${bagProvider.somar().toStringAsFixed(2)}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.textDestaque,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Entrega:", style: TextStyle(fontSize: 18)),
+                          Text(
+                            "R\$ 6,00",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.textDestaque,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Total:", style: TextStyle(fontSize: 18)),
+                          Text(
+                            "R\$ ${(bagProvider.somar() + 6).toStringAsFixed(2)}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.textDestaque,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      ElevatedButton(
+                        onPressed: () {
+                          if(bagProvider.somar() > 0){
+                            showDialog(
+                              context: context,
+                              builder:
+                                (context) => AlertDialog(
+                                  title: Text(
+                                    "Compra Finalizada",
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  content: Icon(
+                                    Icons.check_circle_outline,
+                                    color: AppColors.mainColor,
+                                    size: 80,
+                                  ),
+                                ),
+                            );
+                            bagProvider.clearBag();
+                          }
+                        },
+                        child: Row(
+                          spacing: 8,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.wallet),
+                            Text(
+                              "Pedir",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

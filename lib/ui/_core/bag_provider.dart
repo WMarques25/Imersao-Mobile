@@ -32,4 +32,14 @@ class BagProvider extends ChangeNotifier{
 
     return mapResult;
   }
+
+  int somar(){
+    Map<Dish, int> map = getMapByAmount();
+    int valor = 0;
+    map.forEach((d, i) {
+      valor += d.price * i;
+    });
+
+    return valor;
+  }
 }
