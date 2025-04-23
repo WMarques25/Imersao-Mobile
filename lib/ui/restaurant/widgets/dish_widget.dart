@@ -61,6 +61,7 @@ class DishWidget extends StatelessWidget {
                   Text(
                     '${dish.description.replaceRange(dish.description.indexOf('.'), dish.description.length, '')}.',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    overflow: TextOverflow.clip,
                   ),
                 ],
               ),

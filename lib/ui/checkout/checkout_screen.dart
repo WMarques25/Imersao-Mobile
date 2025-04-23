@@ -66,10 +66,8 @@ class CheckoutScreen extends StatelessWidget {
                         bagProvider.getMapByAmount().keys.toList()[index];
 
                     return ItemWidget(dish: dish);
-                    // return ListTile( // TODO: mudar p
                   },
                 ),
-                // TODO: Add Pagamento, Endereço, Confirmação
               ),
               Text(
                 "Pagamento",

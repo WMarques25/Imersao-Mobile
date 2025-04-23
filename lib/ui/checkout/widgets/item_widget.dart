@@ -32,14 +32,13 @@ class ItemWidget extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
-            width: 200,
+          Expanded(
             child: Column(
               spacing: 8,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
+              children: [
                 Text(
                   dish.name,
                   style: TextStyle(
@@ -47,6 +46,9 @@ class ItemWidget extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
+                  softWrap: true,
+                  overflow: TextOverflow.clip,
+                  maxLines: 2,
                 ),
                 Text(
                   "R\$ ${dish.price.toStringAsFixed(2)}",
@@ -61,7 +63,7 @@ class ItemWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
+              children: [
                 GestureDetector(
                   onTap: () => bagProvider.addAllDishes([dish]),
                   child: Icon(

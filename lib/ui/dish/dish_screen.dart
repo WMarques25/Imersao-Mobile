@@ -22,80 +22,82 @@ class DishScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
         margin: EdgeInsets.symmetric(vertical: 15),
-        child: Column(
-          spacing: 8,
-          children: [
-            Column(
-              spacing: 8,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset("assets/dishes/default.png"),
-                Text(
-                  dish.name,
-                  style: TextStyle(
-                    color: AppColors.textDestaque,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
+        child: SingleChildScrollView(
+          child: Column(
+            spacing: 8,
+            children: [
+              Column(
+                spacing: 8,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset("assets/dishes/default.png"),
+                  Text(
+                    dish.name,
+                    style: TextStyle(
+                      color: AppColors.textDestaque,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
-                  "R\$ ${dish.price.toStringAsFixed(2)}",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
-                ),
-                Text(
-                  dish.description,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
-            Row(
-              spacing: 15,
-
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () => countProvider.remove(),
-                  icon: Icon(
-                    Icons.remove_circle_outline,
-                    color: AppColors.mainColor,
-                    size: 35,
+                  Text(
+                    "R\$ ${dish.price.toStringAsFixed(2)}",
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
                   ),
-                ),
-                Text(
-                  countProvider.getCount().toString(),
-                  style: TextStyle(fontSize: 20),
-                ),
-                IconButton(
-                  onPressed: () => countProvider.add(),
-                  icon: Icon(
-                    Icons.add_circle_outline,
-                    color: AppColors.mainColor,
-                    size: 35,
+                  Text(
+                    dish.description,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  List<Dish> dishes = List.filled(
-                    countProvider.getCount(),
-                    dish,
-                  );
-                  
-                  bagProvider.addAllDishes(dishes);
-                  countProvider.reset();
-                },
-                child: Text(
-                  "Adicionar",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                ],
+              ),
+              Row(
+                spacing: 15,
+          
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () => countProvider.remove(),
+                    icon: Icon(
+                      Icons.remove_circle_outline,
+                      color: AppColors.mainColor,
+                      size: 35,
+                    ),
+                  ),
+                  Text(
+                    countProvider.getCount().toString(),
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  IconButton(
+                    onPressed: () => countProvider.add(),
+                    icon: Icon(
+                      Icons.add_circle_outline,
+                      color: AppColors.mainColor,
+                      size: 35,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: () {
+                    List<Dish> dishes = List.filled(
+                      countProvider.getCount(),
+                      dish,
+                    );
+                    
+                    bagProvider.addAllDishes(dishes);
+                    countProvider.reset();
+                  },
+                  child: Text(
+                    "Adicionar",
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

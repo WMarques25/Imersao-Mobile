@@ -23,10 +23,13 @@ class CategoryScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 15),
-          child: Column(spacing: 16, children: List.generate(rests.length, (i) {
-            Restaurant rest = rests[i];
-            return RestaurantWidget(restaurant: rest);
-          })),
+          child: Column(
+            spacing: 16,
+            children: List.generate(rests.length, (i) {
+              Restaurant rest = rests[i];
+              return RestaurantWidget(restaurant: rest);
+            }),
+          ),
         ),
       ),
     );
